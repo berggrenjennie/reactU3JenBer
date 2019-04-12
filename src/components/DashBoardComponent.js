@@ -1,9 +1,8 @@
-
 import React, { Component, Fragment } from 'react';
+import {Container,Row,Col,Button,Form,ListGroup} from 'react-bootstrap';
+
 import UserListComponent from '../components/UserListComponent';
 import CardComponent from '../components/CardComponent';
-
-import {Container,Row,Col,Button,Form,ListGroup} from 'react-bootstrap';
 
 
 // Klassen innehåller olika states som används i komponenterna, funktioner som
@@ -21,13 +20,12 @@ this.handleChange = this.handleChange.bind(this);
 this.addUserName = this.addUserName.bind(this);
 }
 
+// Functionen hämtar data om flera användare och skickar infon till userList.
 componentDidMount(){
     fetch('http://api.softhouse.rocks/users')
     .then((response)=> response.json().then((response)=>{
-      console.log("result",response);
       this.setState({userList:response});
     }));
-
 }
 
 // Eventfunktion som ändrar statet på value när man skriver i inputfältet

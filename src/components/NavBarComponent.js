@@ -2,8 +2,9 @@ import React, {Component} from 'react';
 import { Nav } from 'react-bootstrap';
 import { Link} from 'react-router-dom';
 
+// Klassen hanterar navigationen
 class NavBarComponent extends Component {
-  
+
     render() {
         return (
           <Nav className="sidebar">
