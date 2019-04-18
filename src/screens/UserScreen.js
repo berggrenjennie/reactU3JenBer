@@ -22,7 +22,10 @@ class UserScreen extends Component {
 // Funktionen hämtar data om unikId från databas och sparar i User
     componentDidMount(){
       const userId=this.props.match.params.id;
-      fetch('http://api.softhouse.rocks/users/'+userId)
+      let url = 'http://api.softhouse.rocks/users/'+ userId;
+      if (userId === undefined)
+        url = 'http://api.softhouse.rocks/users/';
+      fetch(url)
         .then((response)=> response.json().then((response)=>{
           this.setState({user:response});
         }));
